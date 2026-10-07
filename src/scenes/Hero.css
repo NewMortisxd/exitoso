@@ -1,0 +1,136 @@
+.hero__stage {
+  --aw: clamp(200px, min(28vw, 46svh), 420px); /* ancho del arco */
+  --lt: clamp(72px, 12svh, 160px); /* top del logo gigante */
+  --lf: min(16.2vw, 27svh); /* tamaño del logo gigante (1em) */
+  background: var(--naranja);
+  color: var(--negro);
+}
+
+/* Logo principal gigante (vaso + texto). El ancho total es 5.915em (ver Brand.css),
+   así que 16.2vw ≈ 96% del ancho; limitado por alto en pantallas bajas. */
+.hero__word {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  top: var(--lt);
+  font-size: var(--lf);
+  white-space: nowrap;
+  --logo-ink: var(--negro);
+  --logo-dot: var(--crema);
+  --logo-pearls: var(--crema);
+  transform-origin: 50% 0;
+}
+
+/* Foto en forma de arco (como la silueta del vaso) */
+/* El arco empieza justo bajo la línea base del logo (1.38em) para no tapar el texto,
+   y sale por el borde inferior; en pantallas altas queda apoyado a 6svh del fondo. */
+.hero__arch {
+  position: absolute;
+  left: 50%;
+  top: max(calc(var(--lt) + var(--lf) * 1.38), calc(94svh - var(--aw) * 4 / 3));
+  width: var(--aw);
+  margin-left: calc(var(--aw) / -2);
+  aspect-ratio: 3 / 4;
+  rotate: -4deg;
+}
+.hero__arch-in {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: clamp(4px, 0.5vw, 8px) solid var(--crema);
+  border-radius: 999px 999px var(--radius) var(--radius);
+  box-shadow: 0 40px 80px -20px rgb(11 11 9 / 0.45);
+  background: var(--crema);
+}
+.hero__arch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+
+/* PNG del trío, inclinado y desbordando el arco */
+.hero__trio {
+  position: absolute;
+  width: clamp(130px, min(19vw, 32svh), 300px);
+  left: calc(50% + var(--aw) * 0.22);
+  bottom: 2svh;
+  rotate: 8deg;
+}
+
+/* Sello "desliza" girando, abajo a la derecha */
+.hero__sello {
+  position: absolute;
+  right: var(--gutter);
+  bottom: var(--gutter);
+  --sello-color: var(--negro);
+}
+.hero__sello-arrow {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--negro);
+  color: var(--crema);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.1rem, 1.6vw, 1.8rem);
+  line-height: 1;
+}
+
+.hero__slogan {
+  position: absolute;
+  left: var(--gutter);
+  bottom: calc(var(--gutter) + 2svh);
+  max-width: min(36vw, calc(50% - var(--aw) / 2 - var(--gutter) * 1.5));
+  font-size: clamp(2.6rem, 1rem + 5.4vw, 7.5rem);
+}
+
+/* ---- Tablet ---- */
+@media (max-width: 1023px) {
+  .hero__stage {
+    --aw: clamp(200px, min(40vw, 44svh), 380px);
+  }
+  .hero__slogan {
+    max-width: 30vw;
+    font-size: clamp(2.2rem, 1rem + 4.6vw, 4.5rem);
+  }
+  .hero__sello {
+    display: none;
+  }
+}
+
+/* ---- Móvil: composición propia ---- */
+@media (max-width: 767px) {
+  .hero__stage {
+    --aw: min(60vw, 40svh);
+  }
+  .hero__stage {
+    --lt: max(80px, 12svh);
+    --lf: 15.6vw;
+  }
+  .hero__arch {
+    top: auto;
+    bottom: 22svh;
+    left: 44%;
+  }
+  .hero__trio {
+    width: min(40vw, 26svh);
+    left: auto;
+    right: 3vw;
+    bottom: 15svh;
+  }
+  .hero__slogan {
+    left: var(--gutter);
+    right: var(--gutter);
+    bottom: max(20px, 4svh);
+    max-width: none;
+    font-size: clamp(2.6rem, 13vw, 4rem);
+  }
+  .hero__slogan .reveal__line {
+    display: inline;
+  }
+}

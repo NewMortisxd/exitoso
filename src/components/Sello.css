@@ -1,0 +1,34 @@
+.sello {
+  position: relative;
+  width: clamp(92px, 11vw, 168px);
+  aspect-ratio: 1;
+  color: var(--sello-color, var(--negro));
+}
+.sello__spin {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: sello-spin 18s linear infinite;
+}
+.sello text {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: currentColor;
+}
+.sello__center {
+  position: absolute;
+  inset: 31%;
+  display: grid;
+  place-items: center;
+}
+@keyframes sello-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+.is-static .sello__spin {
+  animation: none;
+}

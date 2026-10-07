@@ -1,0 +1,90 @@
+.gal__stage {
+  background: var(--negro);
+  color: var(--crema);
+}
+
+/* La foto ocupa todo el escenario; el clip-path la muestra como tarjeta al inicio */
+.gal__main {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(0% 0% 0% 0% round 0px);
+  will-change: clip-path;
+}
+.gal__main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+.gal__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(11 11 9 / 0.75), rgb(11 11 9 / 0.15) 60%);
+  opacity: 0;
+}
+
+.gal__card {
+  position: absolute;
+  width: clamp(130px, 17vw, 290px);
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.6);
+}
+.gal__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gal__card--a {
+  left: 7vw;
+  top: 16svh;
+  rotate: -7deg;
+}
+.gal__card--b {
+  right: 7vw;
+  top: 48svh;
+  rotate: 6deg;
+}
+
+.gal__kicker {
+  position: absolute;
+  top: var(--gutter);
+  left: 50%;
+  translate: -50% 0;
+  color: var(--naranja);
+}
+
+.gal__title {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: calc(var(--gutter) + 2svh);
+  font-size: var(--fs-xl);
+  color: var(--crema);
+}
+
+@media (max-width: 767px) {
+  .gal__card {
+    width: 34vw;
+  }
+  .gal__card--a {
+    left: -4vw;
+    top: 8svh;
+  }
+  .gal__card--b {
+    right: -4vw;
+    top: auto;
+    bottom: 8svh;
+  }
+}
+
+/* Estático: foto a pantalla completa con el título visible */
+.is-static .gal__shade {
+  opacity: 1;
+}
+.is-static .gal__card,
+.is-static .gal__kicker {
+  display: none;
+}

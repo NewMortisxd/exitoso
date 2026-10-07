@@ -1,0 +1,39 @@
+.brand svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.brand .ink {
+  fill: var(--logo-ink, var(--negro));
+}
+.brand .dot {
+  fill: var(--logo-dot, var(--naranja));
+}
+/* Perlas del vaso: por defecto igual que el punto del texto */
+.brand .icono .dot,
+.brand .logo-full__icono .dot {
+  fill: var(--logo-pearls, var(--logo-dot, var(--naranja)));
+}
+
+/*
+ * Logo completo. 1em = alto de la caja del texto (viewBox 706×151).
+ * En el texto, la línea base cae a 0.146em del borde inferior y la "l" mide ~0.71em.
+ * El vaso (viewBox 408×536) mide 1.6em con pajilla y se apoya en la línea base.
+ */
+.logo-full {
+  display: inline-flex;
+  align-items: flex-end;
+  line-height: 0;
+}
+.logo-full__icono {
+  display: block;
+  width: 1.22em;
+  margin-bottom: 0.135em;
+  margin-right: 0.02em;
+  flex-shrink: 0;
+}
+.logo-full__texto {
+  display: block;
+  width: 4.675em;
+  flex-shrink: 0;
+}

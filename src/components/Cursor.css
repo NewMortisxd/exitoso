@@ -1,0 +1,50 @@
+/* Capa fija que recorta el cursor en los bordes (evita scroll horizontal) */
+.cursor-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: hidden;
+  pointer-events: none;
+}
+.cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--naranja);
+  box-shadow: 0 0 0 2px var(--crema);
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    width 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    height 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    margin 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-color 0.35s,
+    opacity 0.3s;
+}
+.cursor.is-visible {
+  opacity: 1;
+}
+.cursor span {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--crema);
+  opacity: 0;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.cursor.is-big {
+  width: 92px;
+  height: 92px;
+  margin: -46px 0 0 -46px;
+  background: var(--negro);
+}
+.cursor.is-big span {
+  opacity: 1;
+}

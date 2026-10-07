@@ -1,0 +1,90 @@
+.cierre {
+  position: relative;
+  min-height: 100vh;
+  min-height: max(100svh, 640px);
+  display: grid;
+  place-items: center;
+  padding: clamp(80px, 12svh, 140px) var(--gutter) clamp(90px, 14svh, 150px);
+  background: var(--crema);
+  overflow: hidden;
+}
+
+.cierre__center {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: clamp(14px, 2.4svh, 28px);
+}
+/* Logo completo: 5.915em de ancho → ~78vw, máx. ~720px */
+.cierre__logo {
+  font-size: min(13.2vw, 122px);
+}
+.cierre__slogan {
+  font-size: clamp(2.2rem, 1rem + 4.4vw, 6rem);
+  color: var(--naranja);
+}
+.cierre__tagline {
+  max-width: 32ch;
+  font-weight: 600;
+}
+
+/* Collage de PNG con ángulos distintos */
+.cierre__pic {
+  position: absolute;
+  z-index: 1;
+  height: auto;
+}
+.cierre__pic--trio {
+  width: clamp(120px, 16vw, 300px);
+  left: 4vw;
+  bottom: 8svh;
+  rotate: -10deg;
+}
+.cierre__pic--mano {
+  width: clamp(100px, 13vw, 280px);
+  right: 6vw;
+  top: 6svh;
+  rotate: 14deg;
+}
+.cierre__pic--chica {
+  width: clamp(110px, 14vw, 300px);
+  right: 3vw;
+  bottom: -4svh;
+  rotate: 5deg;
+}
+
+.cierre__footer {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  opacity: 0.7;
+}
+
+@media (max-width: 767px) {
+  .cierre__pic--trio {
+    width: 30vw;
+    left: -2vw;
+    bottom: 9svh;
+  }
+  .cierre__pic--mano {
+    width: 24vw;
+    right: 2vw;
+    top: 3svh;
+  }
+  .cierre__pic--chica {
+    width: 28vw;
+    right: -4vw;
+    bottom: 4svh;
+  }
+  .cierre__footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+}

@@ -1,0 +1,19 @@
+:root {
+  /* Marca (de los SVG del logo e icono) */
+  --negro: #0b0b09;
+  --naranja: #ff5e1d;
+  --naranja-icono: #ee551f;
+  --crema: #fff3e6;
+
+  --font-display: 'Bricolage Grotesque', 'Arial Black', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+
+  /* Escala fluida: de 360px a 1920px */
+  --fs-small: clamp(0.8rem, 0.75rem + 0.2vw, 0.95rem);
+  --fs-body: clamp(1rem, 0.92rem + 0.35vw, 1.25rem);
+  --fs-xl: clamp(2.6rem, 1.4rem + 6vw, 8rem);
+  --fs-mega: clamp(5.5rem, 1rem + 22vw, 26rem);
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --radius: clamp(16px, 2vw, 32px);
+}

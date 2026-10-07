@@ -1,0 +1,24 @@
+.perlas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.perla {
+  position: absolute;
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 28%, rgb(255 255 255 / 0.4) 0 10%, transparent 12%),
+    radial-gradient(circle at 60% 70%, transparent 50%, rgb(0 0 0 / 0.18) 100%),
+    var(--c);
+}
+/* Las más lejanas, más pequeñas y suaves */
+.perla[data-depth='1'] {
+  opacity: 0.55;
+  width: calc(var(--s) * 0.7);
+  height: calc(var(--s) * 0.7);
+}
+.perla[data-depth='3'] {
+  filter: drop-shadow(0 8px 10px rgb(11 11 9 / 0.25));
+}

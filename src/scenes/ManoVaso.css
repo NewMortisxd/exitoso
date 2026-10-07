@@ -1,0 +1,68 @@
+.mano__stage {
+  background: var(--crema);
+  display: grid;
+  place-items: center;
+}
+
+.mano__title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: var(--fs-mega);
+  white-space: nowrap;
+}
+.mano__line--a {
+  align-self: flex-start;
+  padding-left: var(--gutter);
+  color: var(--negro);
+}
+.mano__line--b {
+  align-self: flex-end;
+  padding-right: var(--gutter);
+  color: transparent;
+  -webkit-text-stroke: clamp(2px, 0.35vw, 5px) var(--naranja);
+}
+
+/* Centrado con márgenes (no con `translate`: GSAP lo absorbe en su transform y pierde el %).
+   Altura limitada para no pixelar el PNG (≈1.3× su tamaño real). */
+.mano__hand {
+  --mh: min(68svh, 640px);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: var(--mh);
+  width: calc(var(--mh) * 309 / 489);
+  margin: calc(var(--mh) * -0.48) 0 0 calc(var(--mh) * 309 / 489 / -2);
+  rotate: -12deg;
+}
+.mano__hand img {
+  height: 100%;
+  width: auto;
+}
+
+.mano__caption {
+  position: absolute;
+  right: var(--gutter);
+  bottom: var(--gutter);
+  max-width: 30ch;
+  font-size: var(--fs-body);
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .mano__title {
+    justify-content: flex-start;
+    padding-top: 10svh;
+    gap: 34svh;
+  }
+  .mano__hand {
+    --mh: min(52svh, 92vw * 489 / 309);
+  }
+  .mano__caption {
+    left: var(--gutter);
+    max-width: none;
+    text-align: left;
+  }
+}

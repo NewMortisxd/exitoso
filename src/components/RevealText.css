@@ -1,0 +1,18 @@
+.reveal__line {
+  display: block;
+}
+.reveal__mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  /* espacio para descendentes (g, p) sin cortar */
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+  margin-right: 0.24em;
+}
+.reveal__mask:last-child {
+  margin-right: 0;
+}
+.reveal__word {
+  display: inline-block;
+}

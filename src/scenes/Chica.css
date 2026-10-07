@@ -1,0 +1,68 @@
+.chica__stage {
+  background: var(--naranja);
+  color: var(--negro);
+}
+
+/* Círculo crema detrás de la foto: le da profundidad */
+.chica__blob {
+  position: absolute;
+  right: 6vw;
+  bottom: -18svh;
+  width: min(62vw, 92svh);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--crema);
+}
+
+.chica__text {
+  position: absolute;
+  left: var(--gutter);
+  top: 50%;
+  translate: 0 -50%;
+  max-width: 50vw;
+  font-size: clamp(3rem, 1rem + 6.4vw, 9.5rem);
+  z-index: 1;
+}
+
+.chica__img {
+  position: absolute;
+  right: 10vw;
+  /* Sale por abajo del borde; altura limitada para no pixelar */
+  bottom: -6svh;
+  height: min(90svh, 780px);
+  aspect-ratio: 394 / 612;
+  rotate: 4deg;
+}
+.chica__img img {
+  height: 100%;
+  width: auto;
+}
+
+@media (max-width: 1023px) {
+  .chica__img {
+    right: 2vw;
+    height: min(72svh, 680px);
+  }
+  .chica__text {
+    max-width: 58vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .chica__text {
+    top: 9svh;
+    translate: none;
+    max-width: none;
+    right: var(--gutter);
+    font-size: clamp(2.6rem, 12.5vw, 4.4rem);
+  }
+  .chica__img {
+    right: -6vw;
+    height: min(60svh, 130vw);
+  }
+  .chica__blob {
+    right: -20vw;
+    bottom: -10svh;
+    width: 110vw;
+  }
+}

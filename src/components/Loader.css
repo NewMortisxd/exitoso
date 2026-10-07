@@ -1,0 +1,23 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  display: grid;
+  place-items: center;
+  background: var(--crema);
+  overflow: hidden;
+}
+.loader__inner {
+  display: grid;
+  justify-items: center;
+  gap: clamp(18px, 3vw, 32px);
+}
+.loader__logo {
+  font-size: clamp(30px, 5vw, 58px);
+}
+.loader__dot {
+  width: clamp(16px, 2vw, 22px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--naranja);
+}
