@@ -38,11 +38,6 @@ export function Cierre() {
         <RevealText as="h2" lines={content.slogan} className="cierre__slogan display" />
         <p className="cierre__tagline">{content.cierre.tagline}</p>
       </div>
-
-      <footer className="cierre__footer kicker">
-        <span>{content.cierre.footer}</span>
-        <span>© {new Date().getFullYear()}</span>
-      </footer>
     </section>
   )
 }

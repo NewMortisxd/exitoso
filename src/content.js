@@ -19,4 +19,18 @@ export const content = {
     tagline: 'Tu bubble tea favorito te está esperando.',
     footer: 'el exitoso · bubble tea',
   },
+  publico: {
+    kicker: 'estudio de mercado',
+    title: ['nuestro', 'público objetivo.'],
+    sticker: 'cliente ideal',
+    datos: [
+      ['Edad', 'la del colegio'],
+      ['Presupuesto', 'lo que sobró del recreo'],
+      ['Deporte favorito', 'esgrima con sillas'],
+      ['Nivel de seriedad', '0%'],
+      ['Probabilidad de comprar', '100% (si invitas tú)'],
+    ],
+    nota: '*Datos 100% científicos. Ningún estudiante (ni silla) salió herido.',
+    sonido: { on: 'activar sonido', off: 'silenciar' },
+  },
 }

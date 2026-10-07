@@ -1,0 +1,183 @@
+.publico {
+  position: relative;
+  min-height: max(100svh, 680px);
+  padding: clamp(90px, 14svh, 160px) var(--gutter) clamp(90px, 12svh, 140px);
+  background: var(--negro);
+  color: var(--crema);
+  overflow: hidden;
+}
+
+.publico__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 96px);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.publico__kicker {
+  color: var(--naranja);
+  margin-bottom: 14px;
+}
+.publico__title {
+  font-size: clamp(2.8rem, 1rem + 6vw, 7.5rem);
+}
+.publico__title .reveal__line:last-child {
+  color: var(--naranja);
+}
+
+/* Ficha "técnica" del público */
+.publico__datos {
+  margin-top: clamp(24px, 4svh, 44px);
+  max-width: 34rem;
+  border-top: 1px solid rgb(255 243 230 / 0.2);
+}
+.publico__dato {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgb(255 243 230 / 0.2);
+}
+.publico__dato dt {
+  opacity: 0.65;
+}
+.publico__dato dd {
+  font-weight: 600;
+  text-align: right;
+}
+.publico__nota {
+  margin-top: 14px;
+  font-size: var(--fs-small);
+  opacity: 0.55;
+}
+
+/* Video en un "celular" inclinado */
+.publico__media {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 360px, 46svh);
+}
+.publico__phone {
+  position: relative;
+  aspect-ratio: 540 / 968;
+  padding: clamp(6px, 0.8vw, 10px);
+  border-radius: clamp(26px, 3vw, 40px);
+  background: #1c1c19;
+  box-shadow:
+    0 0 0 2px rgb(255 243 230 / 0.12),
+    0 40px 80px -20px rgb(0 0 0 / 0.8),
+    0 0 120px -30px rgb(255 94 29 / 0.55);
+  rotate: -5deg;
+}
+.publico__phone video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: clamp(20px, 2.4vw, 32px);
+  background: #000;
+}
+.publico__sound {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(16px, 2.4vw, 28px);
+  translate: -50% 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(255 243 230 / 0.92);
+  color: var(--negro);
+  font: 600 var(--fs-small) / 1 var(--font-body);
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.publico__sound:hover {
+  background: var(--naranja);
+  color: var(--crema);
+}
+.publico__sound:focus-visible {
+  outline: 3px solid var(--naranja);
+  outline-offset: 3px;
+}
+
+/* Sticker redondo tipo sello de aprobación */
+.publico__sticker {
+  position: absolute;
+  top: 8%;
+  right: -14%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: clamp(92px, 10vw, 140px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--naranja);
+  color: var(--negro);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(0.9rem, 0.7rem + 0.6vw, 1.25rem);
+  line-height: 1;
+  text-align: center;
+  padding: 12px;
+  box-shadow: 0 16px 30px -10px rgb(0 0 0 / 0.6);
+  rotate: 12deg;
+}
+.publico__check {
+  font-size: 1.8em;
+}
+
+/* Flecha dibujada a mano apuntando al video */
+.publico__arrow {
+  position: absolute;
+  left: -38%;
+  top: 30%;
+  width: clamp(80px, 9vw, 130px);
+  fill: none;
+  stroke: var(--naranja);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  rotate: 12deg;
+}
+
+.publico__footer {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  opacity: 0.6;
+}
+
+@media (max-width: 767px) {
+  .publico__grid {
+    grid-template-columns: 1fr;
+  }
+  .publico__media {
+    width: min(72vw, 320px);
+    margin-top: 12px;
+  }
+  .publico__sticker {
+    right: -18%;
+  }
+  .publico__arrow {
+    display: none;
+  }
+  .publico__footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+}

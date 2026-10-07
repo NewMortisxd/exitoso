@@ -10,6 +10,7 @@ import { ManoVaso } from './scenes/ManoVaso'
 import { Galeria } from './scenes/Galeria'
 import { Chica } from './scenes/Chica'
 import { Cierre } from './scenes/Cierre'
+import { Publico } from './scenes/Publico'
 
 export default function App() {
   const [ready, setReady] = useState(false)
@@ -27,6 +28,7 @@ export default function App() {
         <Galeria />
         <Chica />
         <Cierre />
+        <Publico />
       </main>
       <Cursor />
       <div className="grain" aria-hidden="true" />
